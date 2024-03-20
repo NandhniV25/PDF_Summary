@@ -15,7 +15,7 @@ export default function Form()
     return (
       <form action={dispatch}>
         <div className="rounded-md bg-gray-50 p-4 md:p-6">
-          <label htmlFor="file">Upload Pdf</label>
+          <label htmlFor="file">Please upload file here...</label><hr/>
           <input type="file" name="file" id="file"/>
         <div className="mt-6 flex justify-end gap-4">
           <Button type="submit">Generate Summary</Button>
