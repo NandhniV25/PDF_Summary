@@ -3,9 +3,13 @@
 import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
 import { updatePdf } from '../lib/action';
+// import type { PutBlobResult } from '@vercel/blob';
+import { useState, useRef } from 'react';
 
 export default function Form()
 {
+    // const inputFileRef = useRef<HTMLInputElement>(null);
+    // const [blob, setBlob] = useState<PutBlobResult | null>(null);
     const initialState = { message: null, errors: {} };
     const [state, dispatch] = useFormState(updatePdf, initialState);
     return (
@@ -18,5 +22,29 @@ export default function Form()
         </div>
         </div>
       </form>
+      // <form onSubmit={async (event) => {
+      //   event.preventDefault();
+
+      //   if (!inputFileRef.current?.files) {
+      //     throw new Error("No file selected");
+      //   }
+
+      //   const file = inputFileRef.current.files[0];
+
+      //   const response = await fetch(
+      //     `/api/avatar/upload?filename=${file.name}`,
+      //     {
+      //       method: 'POST',
+      //       body: file,
+      //     },
+      //   );
+
+      //   const newBlob = (await response.json()) as PutBlobResult;
+
+      //   setBlob(newBlob);
+      // }}>
+      //   <input name="file" ref={inputFileRef} type="file" required />
+      //   <button type="submit">Upload</button>
+      // </form>
     );
   }
