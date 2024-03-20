@@ -1,3 +1,5 @@
+import Form from "./ui/update-pdf-form";
+
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
@@ -7,6 +9,7 @@ export default function Page() {
             <strong>Upload PDF File</strong> 
           </p>
         </div>
+        <Form/>
       </div>
     </main>
   );
